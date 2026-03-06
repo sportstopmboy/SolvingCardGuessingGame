@@ -8,9 +8,9 @@
 <h3>The Strategy</h3>
 <p>The first step to solving this problem is finding the optimal strategy for playing this game. Although it seems like it's all up to chance, there is a way to get an edge. That edge is in predicting the color which has show up less until this point. Since the number of cards in limited, if 2 more red cards have shown up thus far, it is more likely that the next card will be black. This is because the chance is not 50/50 each time, but because we know for a fact that half of the deck is each color. The optimal strategy, therefore, is:
 <li>As the first guess, pick a random color.</li>
-<li>If the card is black, your next guess is red; and vice versa.</li></p>
-<li>Repeat this process, where each guess is the color which has been seen less until this point. And if the count is equal, pick a card at random.</li>
+<li>If the card is black, your next guess is red; and vice versa.</li>
+<li>Repeat this process, where each guess is the color which has been seen less until this point. And if the count is equal, pick a card at random.</li></p>
 <h3>The Code</h3>
-<p>To actually solve this problem, I used a Monte Carlo simulation where the follows the optimal strategy and calculates its win percentage over millions of games.</p>
+<p>To actually solve this problem, I used a Monte Carlo simulation where the program follows the optimal strategy and calculates its win percentage over millions of games. The program is multithreaded to optimise runtime, and it exports the values into a CSV for later data interpretation.</p>
 <h3>The Result</h3>
 <h2>Furhter Data Interpretation</h3>
