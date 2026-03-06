@@ -7,10 +7,8 @@
 <h2>Solution</h2>
 <h3>The Strategy</h3>
 <p>The first step to solving this problem is finding the optimal strategy for playing this game. Although it seems like it's all up to chance, there is a way to get an edge. That edge is in predicting the color which has show up less until this point. Since the number of cards in limited, if 2 more red cards have shown up thus far, it is more likely that the next card will be black. This is because the chance is not 50/50 each time, but because we know for a fact that half of the deck is each color. The optimal strategy, therefore, is:
-<li>
-  As the first guess, pick a random color.
-  If the card is black, your next guess is red; and vice versa.
-</li></p>
+<li><t>As the first guess, pick a random color.</t></li>
+<li><t>If the card is black, your next guess is red; and vice versa.</t></li></p>
 <h3>The Code</h3>
 <h3>The Result</h3>
 <h2>Furhter Data Interpretation</h3>
