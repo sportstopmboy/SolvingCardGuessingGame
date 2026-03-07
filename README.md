@@ -25,15 +25,15 @@ P(B, R, S_{goal}) = 1
 ```
 
 <p>  
-  <li><b>A Loss:</b> If the deck runs out of cards ($B = 0$ and $R = 0$) and your streak is less than the goal ($$S < S_{goal}$$), you have a 0% chance of winning.</li>
+  <li><b>A Loss:</b> If the deck runs out of cards ($B = 0$ and $R = 0$) and your streak is less than the goal ($$S \lt S_{goal}$$), you have a 0% chance of winning.</li>
 </p>
     
 ```math
-P(0, 0, S \gt S_{goal}) = 0
+P(0, 0, S \lt S_{goal}) = 0
 ```
 
 <p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:
-  <h4>Scenario 1: We guess Black (because $B \ge R$)
+  <h4>Scenario 1: We guess Black (because $B \ge R$)</h4>
 
 </p>
 
