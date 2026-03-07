@@ -29,7 +29,7 @@ P(B, R, S_{goal}) = 1
 </p>
     
 ```math
-P(0, 0, S \g S_{goal}) = 0
+P(0, 0, S \gt S_{goal}) = 0
 ```
 
 <p>Now for the actual game logic. As mentioned, our strategy is to always guess the color that has the most cards remaining. This gives us two scenarios:
