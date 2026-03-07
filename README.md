@@ -21,7 +21,9 @@
   <li><b>A Win:</b> If your streak reaches your prediction (defined as $$S_{goal}$$), you have a 100% chance of winning from that point on.</li>
 </p>
 
-&&P(B, R, S_{goal}) = 1&&
+```math
+P(B, R, S_{goal}) = 1
+```
 
 <p>  
   <li><b>A Loss:</b> If the deck runs out of cards ($B = 0$ and $R = 0$) and your streak is less than the goal ($$S < S_{goal}$$), you have a 0% chance of winning.</li>
