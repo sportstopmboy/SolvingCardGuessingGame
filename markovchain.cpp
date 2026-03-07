@@ -25,23 +25,32 @@ int main()
 {
     for (size_t streakToWin = 1; streakToWin <= MAX_STREAK; streakToWin++)
     {
+        // Declare the dimensions of the memory table.
         const short dimB = NUM_BLACK_CARDS + 1;
         const short dimR = NUM_RED_CARDS + 1;
         const short dimS = streakToWin + 1;
 
+        // Implement the memory table as a dynamically allocated pointer array.
         double *memoryTable = new double[dimB * dimR * dimS];
+        // Fill the table with values of -1.0.
         fillMemoryTable(memoryTable, streakToWin);
 
+        // Start the recursive probability calculator.
         double startingWinChance = P(NUM_BLACK_CARDS, NUM_RED_CARDS, 0, memoryTable, streakToWin);
+        
+        // Output the probability.
         cout << fixed << setprecision(13) << "Probability of Achieving a Streak of "
              << streakToWin << ": " << (startingWinChance * 100) << "%\n";
 
+        // Add the probability to the results array.
         results[streakToWin - 1] = startingWinChance;
 
+        // Safely dispose of the memory table pointer.
         delete[] memoryTable;
         memoryTable = nullptr;
     }
 
+    // Write the results to file.
     writeToFile();
 
     return 0;
@@ -57,6 +66,7 @@ int getIndex(short B, short R, short S, short maxStreak)
     return (B * dimR * dimS) + (R * dimS) + S;
 }
 
+// Helper method to fill the memory table.
 void fillMemoryTable(double *memoryTable, short streakToWin)
 {
     for (size_t i = 0; i <= NUM_BLACK_CARDS; i++)
@@ -73,15 +83,16 @@ void fillMemoryTable(double *memoryTable, short streakToWin)
 
 double P(short B, short R, short S, double *memoryTable, short streakToWin)
 {
-    // Calculate 1D index
+    // Calculate 1D index.
     int index = getIndex(B, R, S, streakToWin);
 
-    // 1. Check memory FIRST!
+    // Check memory first to see if probability has already been calculated.
     if (memoryTable[index] != -1.0) return memoryTable[index];
 
+    // Declare a variable to hold the calculated probability.
     double probability;
 
-    // 2. Calculate the answer based on the state
+    // Calculate the answer based on the state.
     if (S == streakToWin)
     {
         probability = 1.0;
@@ -97,21 +108,22 @@ double P(short B, short R, short S, double *memoryTable, short streakToWin)
 
         if (B >= R)
         {
-            // Guessing Black: Only calculate if those cards actually exist
+            // Guessing Black: Only calculate if those cards actually exist.
             if (B > 0) rightBranch = ((double)B / (B + R)) * P(B - 1, R, S + 1, memoryTable, streakToWin);
             if (R > 0) wrongBranch = ((double)R / (B + R)) * P(B, R - 1, 0, memoryTable, streakToWin);
         }
         else
         {
-            // Guessing Red: Only calculate if those cards actually exist
+            // Guessing Red: Only calculate if those cards actually exist.
             if (R > 0) rightBranch = ((double)R / (B + R)) * P(B, R - 1, S + 1, memoryTable, streakToWin);
             if (B > 0) wrongBranch = ((double)B / (B + R)) * P(B - 1, R, 0, memoryTable, streakToWin);
         }
 
+        // Sum the two branch probabilites.
         probability = rightBranch + wrongBranch;
     }
 
-    // 3. Save to memory and return
+    // Save to memory and return
     memoryTable[index] = probability;
 
     return probability;
@@ -132,10 +144,12 @@ void writeToFile()
     // Output header row.
     outFile << "streak_to_win,probability\n";
 
+    // Output results.
     for (size_t i = 0; i < MAX_STREAK; i++)
     {
         outFile << fixed << setprecision(15) << (i + 1) << ',' << results[i] << '\n';
     }
 
+    // Close the file.
     outFile.close();
 }
