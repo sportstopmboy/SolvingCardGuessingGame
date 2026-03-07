@@ -16,8 +16,7 @@
   <li>$R$ represent the number of red cards left in the deck.</li>
   <li>$S$ represent the current streak.</li>
 </p>
-<p>Now, let us define a mathematical function, $P(B, R, S)$, which represents the probability of eventually winning the game from this specific state.</p>
-<p>Before we calculate the middle of the game, we define how the game mathematically ends:
+<p>Now, let us define a mathematical function, $P(B, R, S)$, which represents the probability of eventually winning the game from this specific state. Before we calculate the middle of the game, we define how the game mathematically ends:
   <li><b>A Win:</b> If your streak reaches your prediction (defined as $$S_{goal}$$), you have a 100% chance of winning from that point on.</li>
 </p>
 
