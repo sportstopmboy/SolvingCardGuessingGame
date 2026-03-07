@@ -65,3 +65,15 @@ P(B, R, S) = \left( \frac{R}{B+R} \times P(B, R-1, S+1) \right) + \left( \frac{B
 
 <h2>Further Data Interpretation</h2>
 <p>When we plot the win percentage results, we can see that the results clearly follow a logistic decay function. However they do not clearly map to any logistic function. As I learnt, this is due to this game being classified as a <b>Finite Combinatorial System</b>. This paired with the fact that we are counting cards gives us a mathematical advantage which "stretches" the tail of the logistic function.</p>
+
+<p>The below graphs shows the advantage that counting cards gives the player.</p>
+
+<img width="1331" height="859" alt="image" src="https://github.com/user-attachments/assets/f36d1d57-a798-41da-81b6-5f4de8a95907" />
+
+<img width="1304" height="778" alt="image" src="https://github.com/user-attachments/assets/7728bc42-88b8-420b-87b7-823b73c7e06c" />
+
+<img width="1306" height="835" alt="image" src="https://github.com/user-attachments/assets/bcb5ad88-52a0-4411-a966-8beaec40898b" />
+
+
+
+
