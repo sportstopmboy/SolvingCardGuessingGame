@@ -18,8 +18,7 @@
 </p>
 <p>Now, let us define a mathematical function, $P(B, R, S)$, which represents the probability of eventually winning the game from this specific state.</p>
 <p>Before we calculate the middle of the game, we define how the game mathematically ends:
-  <li><b>A Win: If your streak reaches your goal (defined as $$S_{goal}$$), you have a 100% chance of winning from that point on.</b></li>
-  $$P(B, R, S_{goal}) = 1$$
+  <li><b>A Win:</b> If your streak reaches your goal (defined as $$S_{goal}$$), you have a 100% chance of winning from that point on.</li>
 </p>
 <h3>The Result</h3>
 <p>The result shows that the answer to the question in the problem statement is 6. On average, you can expect to win a bit more than half of games played when you make the prediction 6 cards in a row and you play it perfectly. The results for the win percentages for the other streak prediction values are stored in the example 'markov_chain_results.csv' file.</p>
